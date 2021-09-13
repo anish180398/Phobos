@@ -1,27 +1,20 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-import Home from './pages/Home/Home';
-import SearchResult from './pages/SearchResult/SearchResult';
-
+import React from 'react';
 import './App.css';
+import Home from './pages/Home';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import SearchPage from './pages/SearchPage'
 
 function App() {
   return (
     <div className="app">
-
       <Router>
         <Switch>
-
-          {/* Home (the one with the search on) */}
-          <Route path="/" exact>
+          <Route path="/search">
+            <SearchPage />
+          </Route>
+          <Route path="/">
             <Home />
           </Route>
-
-          {/* SearchPage (The results page) */}
-          <Route path="/search">
-            <SearchResult />
-          </Route>
-
         </Switch>
       </Router>
     </div>
